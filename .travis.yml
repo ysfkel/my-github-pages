@@ -1,3 +1,31 @@
-language: go 
-go: 1.13.x
- 
+language: node_js
+node_js:
+- 11.6.0
+
+cache: yarn 
+
+install:
+ - yarn ci 
+
+script: 
+  - yarn test 
+  - yarn run build
+
+deploy:
+   provider: pages 
+   skip-cleanup: true 
+   github-token: $GITHUB_TOKEN
+   on:
+    branch: gh-pages 
+  
+
+# before_install:
+# install: 
+# before_script:
+# script:
+# after_sucess:
+# after_failure:
+# after_script:
+# before_deploy:
+# deploy:
+# after_deploy:
