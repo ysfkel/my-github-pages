@@ -1,23 +1,12 @@
-language: node_js
-node_js:
-- 11.6.0
-
-cache: yarn 
-
-install:
- - yarn install
-
 script: 
  - make build-mkdocs
-#   - yarn test 
-#   - yarn run build
 
 deploy:
    provider: pages 
    skip-cleanup: true 
    github-token: $GITHUB_TOKEN
    local_dir: "./site"
-   keep_history: true
+   keep_history: false
    on:
     branch: master 
   
