@@ -8,15 +8,18 @@ install:
  - yarn install
 
 script: 
-  - yarn test 
-  - yarn run build
+ - make build-mkdocs
+#   - yarn test 
+#   - yarn run build
 
 deploy:
    provider: pages 
    skip-cleanup: true 
    github-token: $GITHUB_TOKEN
+   local_dir: "./site"
+   keep_history: true
    on:
-    branch: gh-pages 
+    branch: master 
   
 
 # before_install:
