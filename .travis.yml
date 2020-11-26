@@ -15,7 +15,8 @@ deploy:
 # install: 
 # before_script:
 # script:
-# after_sucess:
+after_sucess:
+- echo 'YUSUF KELO' > MY_NAME
 # after_failure:
 # after_script:
 # before_deploy:
